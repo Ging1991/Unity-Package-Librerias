@@ -1,0 +1,14 @@
+{
+  "name": "Ging1991.Librerias",
+  "rootNamespace": "Ging1991.Librerias",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "autoReferenced": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
