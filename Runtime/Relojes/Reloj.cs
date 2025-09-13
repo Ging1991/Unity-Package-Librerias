@@ -42,7 +42,7 @@ namespace Ging1991.Relojes {
 
 			Reloj relojComponente = relojOBJ.GetComponent<Reloj>();
 			if (relojComponente == null) {
-				Debug.LogWarning($"El objeto '{NOMBRE_RELOJ_GLOBAL}' existe pero no tiene un componente Reloj.");
+				Debug.LogWarning($"El objeto '{NOMBRE_RELOJ_GLOBAL}' existe, pero no tiene un componente Reloj.");
 				return null;
 			}
 

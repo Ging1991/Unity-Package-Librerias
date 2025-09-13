@@ -18,11 +18,11 @@ namespace Ging1991.Persistencia.Direcciones {
 
 
 		public static string GetDirectorioRaiz() {
-#if UNITY_EDITOR
+			#if UNITY_EDITOR
 			return Application.dataPath;
-#else
+			#else
 			return Application.persistentDataPath;
-#endif
+			#endif
 		}
 
 
