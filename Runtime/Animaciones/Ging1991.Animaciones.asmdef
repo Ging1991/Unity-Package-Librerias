@@ -1,7 +1,7 @@
 {
   "name": "Ging1991.Animaciones",
   "rootNamespace": "Ging1991.Animaciones",
-  "references": [],
+  "references": ["Ging1991.Relojes"],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
