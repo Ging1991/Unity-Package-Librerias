@@ -1,0 +1,14 @@
+{
+  "name": "Ging1991.Interfaces",
+  "rootNamespace": "Ging1991.Interfaces",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "autoReferenced": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
