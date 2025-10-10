@@ -1,7 +1,7 @@
 {
   "name": "Ging1991.Ventanas",
   "rootNamespace": "Ging1991.Ventanas",
-  "references": ["Ging1991.Core"],
+  "references": ["Ging1991.Core", "Ging1991.Interfaces"],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
