@@ -44,7 +44,7 @@ namespace Ging1991.Animaciones.Efectos {
 		}
 
 
-		private void SetEscala(Vector3 escala) {
+		protected void SetEscala(Vector3 escala) {
 			foreach (var transformador in transformadores) {
 				if (transformador != null)
 					transformador.localScale = escala;
@@ -53,5 +53,5 @@ namespace Ging1991.Animaciones.Efectos {
 
 
 	}
-	
+
 }

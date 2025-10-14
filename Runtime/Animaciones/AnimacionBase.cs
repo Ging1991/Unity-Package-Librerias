@@ -2,7 +2,7 @@ using Ging1991.Relojes;
 using UnityEngine;
 
 namespace Ging1991.Animaciones {
-	
+
 	public abstract class AnimacionBase : MonoBehaviour, IEjecutable {
 
 		public bool autoiniciar = false;
@@ -15,7 +15,7 @@ namespace Ging1991.Animaciones {
 
 		void Start() {
 			if (autoiniciar)
-				Iniciar(iteraciones);
+				AnimacionDirecta();
 		}
 
 
@@ -57,8 +57,9 @@ namespace Ging1991.Animaciones {
 			if (SigueAnimando()) {
 				AplicarCambio();
 				pasosRestantes--;
-			
-			} else {
+
+			}
+			else {
 				AplicarCambio();
 				Finalizar();
 			}
@@ -68,7 +69,7 @@ namespace Ging1991.Animaciones {
 		public void Cancelar(bool ejecutarCallback = false) {
 			if (estaCancelada)
 				return;
-				
+
 			estaCancelada = true;
 			pasosRestantes = 0;
 
