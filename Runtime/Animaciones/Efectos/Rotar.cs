@@ -1,63 +1,35 @@
 using System.Collections.Generic;
+using Ging1991.Animaciones.Transformaciones;
+using Ging1991.Relojes;
 using UnityEngine;
 
 namespace Ging1991.Animaciones.Efectos {
 
-	public class Rotar : AnimacionBase {
+	public class Rotar : AnimacionBase<Transform> {
 
+		public List<Transform> objetivos;
 		public Vector3 rotacionInicial;
 		public Vector3 rotacionFinal;
-		public List<Transform> transformadores;
 
-		public void Animar(List<Transform> transformadores, Vector3 rotacionInicial, Vector3 rotacionFinal, int iteraciones) {
-			if (transformadores == null || transformadores.Count == 0) {
-				Debug.LogWarning("Rotar: no hay transformadores asignados.");
-				return;
-			}
+		public void Inicializar(Vector3 rotacionInicial, Vector3 rotacionFinal, int iteraciones,
+				List<Transform> objetivos = null,
+				IEjecutable accionFinal = null) {
 
-			this.transformadores = transformadores;
+			this.objetivos = objetivos ?? this.objetivos;
 			this.rotacionInicial = rotacionInicial;
 			this.rotacionFinal = rotacionFinal;
 			this.iteraciones = iteraciones;
-
-			SetRotacion(rotacionInicial);
-			Iniciar(iteraciones);
+			this.accionFinal = accionFinal;
+			Inicializar();
 		}
 
 
-		public override void AnimacionDirecta() {
-			if (transformadores == null || transformadores.Count == 0)
-				return;
-
-			SetRotacion(rotacionInicial);
-			Iniciar(iteraciones);
-		}
-
-
-		protected override void AplicarCambio() {
-			if (transformadores == null || transformadores.Count == 0)
-				return;
-
-			float progreso = 1f - (float)pasosRestantes / pasosTotales;
-
-			Vector3 nuevaRotacion = new Vector3(
-				Mathf.LerpAngle(rotacionInicial.x, rotacionFinal.x, progreso),
-				Mathf.LerpAngle(rotacionInicial.y, rotacionFinal.y, progreso),
-				Mathf.LerpAngle(rotacionInicial.z, rotacionFinal.z, progreso)
-			);
-
-			SetRotacion(nuevaRotacion);
-		}
-
-
-		private void SetRotacion(Vector3 euler) {
-			foreach (var transformador in transformadores) {
-				if (transformador != null)
-					transformador.localRotation = Quaternion.Euler(euler);
-			}
+		public override void Inicializar() {
+			transformacion = new TransformacionRotar(objetivos, rotacionInicial, rotacionFinal, iteraciones);
+			IniciarReloj();
 		}
 
 
 	}
-	
+
 }

@@ -1,54 +1,33 @@
 using System.Collections.Generic;
+using Ging1991.Animaciones.Transformaciones;
+using Ging1991.Relojes;
 using UnityEngine;
 
 namespace Ging1991.Animaciones.Efectos {
 
-	public class Escalar : AnimacionBase {
+	public class Escalar : AnimacionBase<Transform> {
 
+		public List<Transform> objetivos;
 		public float escalaInicial;
 		public float escalaFinal;
-		public List<Transform> transformadores;
 
-		public void Animar(List<Transform> transformadores, float escalaInicial, float escalaFinal, int iteraciones) {
-			if (transformadores == null || transformadores.Count == 0) {
-				Debug.LogWarning("Escalar: no hay transformadores asignados.");
-				return;
-			}
 
-			this.transformadores = transformadores;
+		public void Inicializar(float escalaInicial, float escalaFinal, int iteraciones,
+				List<Transform> objetivos = null,
+				IEjecutable accionFinal = null) {
+
+			this.objetivos = objetivos ?? this.objetivos;
 			this.escalaInicial = escalaInicial;
 			this.escalaFinal = escalaFinal;
 			this.iteraciones = iteraciones;
-
-			SetEscala(Vector3.one * escalaInicial);
-			Iniciar(iteraciones);
+			this.accionFinal = accionFinal;
+			Inicializar();
 		}
 
 
-		public override void AnimacionDirecta() {
-			if (transformadores == null || transformadores.Count == 0)
-				return;
-
-			SetEscala(Vector3.one * escalaInicial);
-			Iniciar(iteraciones);
-		}
-
-
-		protected override void AplicarCambio() {
-			if (transformadores == null || transformadores.Count == 0)
-				return;
-
-			float progreso = 1f - (float)pasosRestantes / pasosTotales;
-			float nuevaEscala = Mathf.Lerp(escalaInicial, escalaFinal, progreso);
-			SetEscala(Vector3.one * nuevaEscala);
-		}
-
-
-		protected void SetEscala(Vector3 escala) {
-			foreach (var transformador in transformadores) {
-				if (transformador != null)
-					transformador.localScale = escala;
-			}
+		public override void Inicializar() {
+			transformacion = new TransformacionEscalar(objetivos, escalaInicial, escalaFinal, iteraciones);
+			IniciarReloj();
 		}
 
 

@@ -1,60 +1,37 @@
 using System.Collections.Generic;
+using Ging1991.Animaciones.Transformaciones;
+using Ging1991.Relojes;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Ging1991.Animaciones.Efectos {
 
-	public class Colorizar : AnimacionBase {
+	public class Colorizar : AnimacionBase<Image> {
 
-		public List<Image> imagenes;
+		public List<Image> objetivos;
 		public Color colorInicial = Color.white;
 		public Color colorFinal = Color.white;
 
 
-		public void Animar(List<Image> imagenes, Color colorInicial, Color colorFinal, int iteraciones) {
-			if (imagenes == null || imagenes.Count == 0) {
-				Debug.LogWarning("Colorizar: no hay imágenes asignadas.");
-				return;
-			}
+		public void Inicializar(Color colorInicial, Color colorFinal, int iteraciones,
+				List<Image> objetivos = null,
+				IEjecutable accionFinal = null) {
 
-			this.imagenes = imagenes;
+			this.objetivos = objetivos ?? this.objetivos;
 			this.colorInicial = colorInicial;
 			this.colorFinal = colorFinal;
-
-			SetColor(colorInicial);
-			Iniciar(iteraciones);
+			this.iteraciones = iteraciones;
+			this.accionFinal = accionFinal;
+			Inicializar();
 		}
 
 
-		public override void AnimacionDirecta() {
-			if (imagenes == null || imagenes.Count == 0)
-				return;
-
-			SetColor(colorInicial);
-			Iniciar(iteraciones);
+		public override void Inicializar() {
+			transformacion = new TransformacionColorizar(objetivos, colorInicial, colorFinal, iteraciones);
+			IniciarReloj();
 		}
 
 
-		protected override void AplicarCambio() {
-			if (imagenes == null || imagenes.Count == 0)
-				return;
-
-			float progreso = 1f - (float)pasosRestantes / pasosTotales;
-			Color nuevoColor = Color.Lerp(colorInicial, colorFinal, progreso);
-			SetColor(nuevoColor);
-		}
-
-
-		private void SetColor(Color color) {
-			if (imagenes == null) return;
-
-			foreach (var imagen in imagenes) {
-				if (imagen != null)
-					imagen.color = color;
-			}
-		}
-
-		
 	}
-	
+
 }
