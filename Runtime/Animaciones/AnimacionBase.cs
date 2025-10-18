@@ -11,6 +11,8 @@ namespace Ging1991.Animaciones {
 		protected TransformacionBase<T> transformacion;
 		protected Reloj reloj;
 		public IEjecutable accionFinal;
+		public enum UnidadTiempo { CENTECIMAS, DECIMAS, SEGUNDOS }
+		public UnidadTiempo unidadTiempo = UnidadTiempo.DECIMAS;
 
 		void Start() {
 			if (autoiniciar)
@@ -23,8 +25,13 @@ namespace Ging1991.Animaciones {
 
 		protected void IniciarReloj(Reloj reloj = null) {
 			this.reloj = reloj != null ? reloj : Reloj.GetInstanciaGlobal();
-			this.reloj.decimas.Desuscribir(this);
-			this.reloj.decimas.Suscribir(this);
+			this.reloj.Desuscribir(this);
+			if (unidadTiempo == UnidadTiempo.CENTECIMAS)
+				this.reloj.centesimas.Suscribir(this);
+			if (unidadTiempo == UnidadTiempo.DECIMAS)
+				this.reloj.decimas.Suscribir(this);
+			if (unidadTiempo == UnidadTiempo.SEGUNDOS)
+				this.reloj.segundos.Suscribir(this);
 		}
 
 
@@ -57,7 +64,7 @@ namespace Ging1991.Animaciones {
 
 		private void Finalizar() {
 			if (reloj != null) {
-				reloj.decimas.Desuscribir(this);
+				reloj.Desuscribir(this);
 			}
 			accionFinal?.Ejecutar();
 		}

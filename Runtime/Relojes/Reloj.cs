@@ -4,6 +4,7 @@ namespace Ging1991.Relojes {
 
 	public class Reloj : MonoBehaviour {
 
+		public GestorDePeriodo centesimas;
 		public GestorDePeriodo decimas;
 		public GestorDePeriodo segundos;
 		public GestorDePeriodo minutos;
@@ -11,6 +12,7 @@ namespace Ging1991.Relojes {
 		public static string NOMBRE_RELOJ_GLOBAL = "RelojGlobal";
 
 		void Awake() {
+			centesimas = new GestorDePeriodo(0.01f);
 			decimas = new GestorDePeriodo(0.1f);
 			segundos = new GestorDePeriodo(1f);
 			minutos = new GestorDePeriodo(60f);
@@ -19,6 +21,7 @@ namespace Ging1991.Relojes {
 
 
 		public void Reiniciar() {
+			centesimas.Reiniciar();
 			decimas.Reiniciar();
 			segundos.Reiniciar();
 			minutos.Reiniciar();
@@ -26,6 +29,7 @@ namespace Ging1991.Relojes {
 
 
 		void Update() {
+			centesimas.ProcesarAcciones();
 			decimas.ProcesarAcciones();
 			segundos.ProcesarAcciones();
 			minutos.ProcesarAcciones();
@@ -51,6 +55,7 @@ namespace Ging1991.Relojes {
 
 
 		public void Desuscribir(IEjecutable accion) {
+			centesimas.Desuscribir(accion);
 			decimas.Desuscribir(accion);
 			segundos.Desuscribir(accion);
 			minutos.Desuscribir(accion);
