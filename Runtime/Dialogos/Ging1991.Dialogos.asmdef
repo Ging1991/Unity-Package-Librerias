@@ -1,7 +1,7 @@
 {
-  "name": "Ging1991.Interfaces",
-  "rootNamespace": "Ging1991.Interfaces",
-	"references": ["Ging1991.Relojes"],
+  "name": "Ging1991.Animaciones",
+  "rootNamespace": "Ging1991.Animaciones",
+  "references": ["Ging1991.Relojes", "Ging1991.Interfaces"],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
