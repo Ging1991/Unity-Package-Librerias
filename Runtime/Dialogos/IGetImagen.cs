@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Ging1991.Dialogos {
 
-	public interface IProveedorImagen {
+	public interface IGetImagen {
 
 		Sprite GetImagen(string nombre);
 
