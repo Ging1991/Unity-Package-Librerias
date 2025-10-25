@@ -1,0 +1,14 @@
+{
+  "name": "Ging1991.Persistencia",
+  "rootNamespace": "Ging1991.Persistencia",
+  "references": ["Ging1991.Relojes"],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "autoReferenced": true,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
