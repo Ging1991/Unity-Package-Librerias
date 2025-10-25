@@ -1,7 +1,7 @@
 {
   "name": "Ging1991.Dialogos",
   "rootNamespace": "Ging1991.Dialogos",
-  "references": ["Ging1991.Relojes", "Ging1991.Interfaces", "Ging1991.Persistencia"],
+  "references": ["Ging1991.Relojes", "Ging1991.Interfaces", "Ging1991.Persistencia", "Ging1991.Animaciones"],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
