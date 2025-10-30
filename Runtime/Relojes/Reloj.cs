@@ -28,7 +28,7 @@ namespace Ging1991.Relojes {
 		}
 
 
-		void Update() {
+		void FixedUpdate() {
 			centesimas.ProcesarAcciones();
 			decimas.ProcesarAcciones();
 			segundos.ProcesarAcciones();

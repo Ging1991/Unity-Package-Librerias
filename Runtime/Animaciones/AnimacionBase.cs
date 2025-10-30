@@ -63,6 +63,7 @@ namespace Ging1991.Animaciones {
 
 
 		private void Finalizar() {
+			Debug.Log("Finalizando: " + gameObject.name);
 			if (reloj != null) {
 				reloj.Desuscribir(this);
 			}
