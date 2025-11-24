@@ -9,9 +9,10 @@ namespace Ging1991.Interfaces {
 		public string temaBorde;
 		public GameObject rellenoOBJ;
 
-        void Start() {
-			FindAnyObjectByType<TemaControl>().AplicarTemaPrincipal(this);
-        }
+		void Start() {
+			if (!esPersonalizado)
+				FindAnyObjectByType<TemaControl>().AplicarTemaPrincipal(this);
+		}
 
 		public void SetColorBorde(Color color) {
 			GetComponent<Image>().color = color;
@@ -26,7 +27,7 @@ namespace Ging1991.Interfaces {
 		public override void AplicarTema(Tema tema) {
 			if (!esPersonalizado) {
 				base.AplicarTema(tema);
-				SetColorBorde(tema.TraerColor(temaBorde));				
+				SetColorBorde(tema.TraerColor(temaBorde));
 			}
 		}
 
