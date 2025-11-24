@@ -1,7 +1,7 @@
 {
   "name": "Ging1991.Cartas",
   "rootNamespace": "Ging1991.Cartas",
-  "references": ["Ging1991.Core", "Ging1991.Interfaces", "Ging1991.Persistencia"],
+  "references": ["Ging1991.Core", "Ging1991.Interfaces", "Ging1991.Persistencia", "Ging1991.Animaciones", "Ging1991.Relojes"],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
