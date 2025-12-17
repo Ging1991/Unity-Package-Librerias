@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Ging1991.Core.Interfaces;
 using Ging1991.Dialogos.Interpretes;
 using Ging1991.Dialogos.Persistencia;
 using Ging1991.Relojes;

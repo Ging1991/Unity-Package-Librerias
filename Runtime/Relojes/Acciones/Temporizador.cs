@@ -1,4 +1,5 @@
 using System;
+using Ging1991.Core.Interfaces;
 
 namespace Ging1991.Relojes.Acciones {
 
@@ -32,9 +33,9 @@ namespace Ging1991.Relojes.Acciones {
 					contador = 0;
 				else
 					if (reloj != null)
-					reloj.Desuscribir(this);
-				else
-					Reloj.GetInstanciaGlobal().Desuscribir(this);
+						reloj.Desuscribir(this);
+					else
+						Reloj.GetInstanciaGlobal().Desuscribir(this);
 			}
 		}
 

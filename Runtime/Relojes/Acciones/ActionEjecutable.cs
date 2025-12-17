@@ -1,4 +1,5 @@
 using System;
+using Ging1991.Core.Interfaces;
 
 namespace Ging1991.Relojes.Acciones {
 

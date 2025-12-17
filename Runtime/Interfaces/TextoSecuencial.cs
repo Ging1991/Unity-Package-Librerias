@@ -1,3 +1,4 @@
+using Ging1991.Core.Interfaces;
 using Ging1991.Relojes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,7 +19,7 @@ namespace Ging1991.Interfaces {
 			this.reloj = reloj != null ? reloj : Reloj.GetInstanciaGlobal();
 
 			this.reloj.Desuscribir(this);
-			this.reloj.decimas.Suscribir(this);
+			this.reloj.centesimas.Suscribir(this);
 			indice = 0;
 			componente.text = "";
 		}

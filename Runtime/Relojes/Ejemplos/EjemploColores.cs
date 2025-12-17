@@ -1,3 +1,4 @@
+using Ging1991.Core.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
