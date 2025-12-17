@@ -1,6 +1,6 @@
 {
-  "name": "Ging1991.Relojes",
-  "rootNamespace": "Ging1991.Relojes",
+  "name": "Ging1991.Antiguo",
+  "rootNamespace": "Ging1991.Antiguo",
   "references": ["Ging1991.Core"],
   "includePlatforms": [],
   "excludePlatforms": [],
