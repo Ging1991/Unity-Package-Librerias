@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Ging1991.Core.Interfaces;
 using Ging1991.Persistencia.Lectores;
 using UnityEngine;
 
 namespace Ging1991.Idiomas {
 
-	public class Idioma {
+	public class Idioma : ITraductor {
 
 		private readonly Dictionary<string, string> datos;
 
@@ -13,7 +14,7 @@ namespace Ging1991.Idiomas {
 			datos = lector.LeerMapa();
 		}
 
-		public string GetTraduccion(string clave) {
+		public string GetElemento(string clave) {
 			if (datos.ContainsKey(clave))
 				return datos[clave];
 			Debug.LogWarning($"No se encontró la clave: {clave}");

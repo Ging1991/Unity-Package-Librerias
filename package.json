@@ -1,9 +1,12 @@
 {
   "name": "com.ging1991.libreria",
-  "version": "2.0.0",
-  "displayName": "Ging1991",
+  "version": "2.0.1",
+  "displayName": "Ging1991 - Otros",
   "description": "Librería que agrupa otras librerias para Unity.",
   "unity": "2021.3",
+    "dependencies": {
+    "com.ging1991.core": "2.0.0"
+  },
   "keywords": [
     "time",
     "clock",
