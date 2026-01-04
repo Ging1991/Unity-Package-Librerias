@@ -10,8 +10,12 @@ namespace Ging1991.Interfaces {
 		public GameObject rellenoOBJ;
 
 		void Start() {
-			if (!esPersonalizado)
-				FindAnyObjectByType<TemaControl>().AplicarTemaPrincipal(this);
+			if (!esPersonalizado) {
+				TemaControl temaControl = FindAnyObjectByType<TemaControl>();
+				if (temaControl != null) {
+					temaControl.AplicarTemaPrincipal(this);
+				}
+			}
 		}
 
 		public void SetColorBorde(Color color) {
