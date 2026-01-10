@@ -1,7 +1,7 @@
 {
   "name": "Ging1991.Librerias",
   "rootNamespace": "Ging1991.Librerias",
-  "references": [],
+  "references": ["Ging1991.Interfaces"],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
