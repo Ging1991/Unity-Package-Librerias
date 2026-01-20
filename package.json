@@ -1,10 +1,10 @@
 {
   "name": "com.ging1991.libreria",
-  "version": "4.0.0",
-  "displayName": "Ging1991 - Otros",
+  "version": "5.0.0",
+  "displayName": "Ging1991 - General",
   "description": "Librería que agrupa otras librerias para Unity.",
   "unity": "2021.3",
-    "dependencies": {
+  "dependencies": {
     "com.ging1991.core": "2.0.0"
   },
   "keywords": [
