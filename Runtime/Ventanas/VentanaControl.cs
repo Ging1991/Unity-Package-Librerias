@@ -1,6 +1,7 @@
 using System;
 using Ging1991.Core;
 using UnityEngine;
+using Ging1991.General;
 
 namespace Ging1991.Ventanas {
 
