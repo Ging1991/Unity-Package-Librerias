@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Ging1991.Core {
+namespace Ging1991.General {
 
 	public class Bloqueador : MonoBehaviour {
 
